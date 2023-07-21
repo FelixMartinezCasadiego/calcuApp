@@ -78,6 +78,7 @@ const ButtonCal = ({
         switch (lastOperation.current) {
           case Operators.sum:
             setNumber(`${num1 + num2}`);
+            break;
           case Operators.subtract:
             setNumber(`${num2 - num1}`);
             break;
