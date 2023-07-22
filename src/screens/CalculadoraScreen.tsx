@@ -1,5 +1,6 @@
 import {View, Text} from 'react-native';
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
+import SplashScreen from 'react-native-splash-screen';
 import {styles} from '../theme/appTheme';
 import ButtonCal from '../components/ButtonCal';
 import {arrayCal} from '../utils/constants/dataCal';
@@ -15,6 +16,10 @@ const CalculadoraScreen = () => {
   const [number, setNumber] = useState<string>('100');
   const [beforeNumber, setBeforeNumber] = useState<string>('0');
   const lastOperation = useRef<Operators>();
+
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
 
   return (
     <View style={styles.calculadoraContainer}>
